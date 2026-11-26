@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amigo Secreto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>🎁 Amigo Secreto</h1>
+
+    <section id="tela-carregando" class="tela">
+      <p class="sub">Carregando...</p>
+    </section>
+
+    <section id="tela-erro" class="tela" hidden>
+      <p class="sub" id="msg-erro"></p>
+    </section>
+
+    <!-- Vez de alguém sortear -->
+    <section id="tela-vez" class="tela" hidden>
+      <p class="sub">Agora é a vez de</p>
+      <h2 id="nome-vez" class="nome"></h2>
+      <button id="btn-sortear" class="btn">Sou eu! Sortear</button>
+      <p id="progresso" class="mini"></p>
+      <button id="btn-rever" class="link" hidden>Rever meu amigo secreto</button>
+    </section>
+
+    <!-- Resultado (só quem sorteou deve ver) -->
+    <section id="tela-resultado" class="tela" hidden>
+      <p class="sub"><span id="quem-sorteou"></span>, seu amigo secreto é</p>
+      <h2 id="nome-sorteado" class="nome destaque"></h2>
+      <p class="mini">Memorize e clique abaixo para esconder.</p>
+      <button id="btn-fechar" class="btn">Já vi, esconder</button>
+    </section>
+
+    <!-- Tudo sorteado -->
+    <section id="tela-fim" class="tela" hidden>
+      <h2 class="nome">Sorteio concluído! 🎉</h2>
+      <p class="sub">Todas já sortearam. Boa troca de presentes!</p>
+      <button id="btn-rever-fim" class="link" hidden>Rever meu amigo secreto</button>
+    </section>
+
+    <button id="btn-reset" class="reset" hidden>Reiniciar sorteio</button>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
